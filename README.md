@@ -12,11 +12,13 @@ Download the latest build from **[Releases](../../releases)**.
 
 ## How to use
 
-1. Unzip anywhere and run `Canopy.exe`.
+1. Unzip the whole folder anywhere and run `Canopy\Canopy.exe`. Keep the `league` folder next to it.
 2. Press **Launch Gorilla Tag**. Canopy checks the game files, starts the game through Steam and attaches protection.
 3. Closing Canopy closes the game. The game cannot run under Canopy without protection.
 
 For league matches, use **Restart as administrator** so Canopy can also inspect tools that run as administrator.
+
+This is a league-managed build: the protection policy and game baseline are signed by the league and cannot be changed on a player's PC. The `admin` folder contains the league administrator tool; it does nothing without the league's private key.
 
 ## What it does
 
@@ -25,6 +27,8 @@ For league matches, use **Restart as administrator** so Canopy can also inspect 
 - Verifies every library and managed assembly that loads into the game.
 - Checks the game's and SteamVR's code for hooks.
 - Writes a tamper-evident security log and a session report for league administrators.
+
+This is a league-managed build: the protection policy and game baseline are signed by the league and cannot be changed on a player's PC. The `admin` folder contains the league administrator tool; it does nothing without the league's private key.
 
 ## What it does not do
 
@@ -35,7 +39,7 @@ Canopy runs in user mode and has no kernel driver.
 - It does not read in-game movement values.
 - A session report shows that nothing was caught. It is not proof that a player is clean.
 
-This is an early release. It has been run against the real game, but not yet through a full headset session.
+It has been run against the real game, but not yet through a full headset session. After a Gorilla Tag update, players need a new signed baseline from the league before they can launch.
 
 ## Privacy
 
