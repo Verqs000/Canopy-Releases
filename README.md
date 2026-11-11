@@ -28,8 +28,6 @@ This is a league-managed build: the protection policy and game baseline are sign
 - Checks the game's and SteamVR's code for hooks.
 - Writes a tamper-evident security log and a session report for league administrators.
 
-This is a league-managed build: the protection policy and game baseline are signed by the league and cannot be changed on a player's PC. The `admin` folder contains the league administrator tool; it does nothing without the league's private key.
-
 ## What it does not do
 
 Canopy runs in user mode and has no kernel driver.
