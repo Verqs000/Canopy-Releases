@@ -39,10 +39,10 @@ Canopy runs in user mode and has no kernel driver.
 
 - Kernel-level cheats are out of reach.
 - Tools run as administrator can only be inspected when Canopy is also run as administrator.
-- It does not read in-game movement values.
+- In-game movement values (jump speed, velocity limit, arm length and so on) are only seen when the league uses the optional in-game reporter plugin in the `plugin` folder. It reports them every 10 seconds as evidence; it does not lock them.
 - A session report shows that nothing was caught. It is not proof that a player is clean.
 
-It has been run against the real game, but not yet through a full headset session. After a Gorilla Tag update, players need a new signed baseline from the league before they can launch.
+Version 1.2.0 is made for Gorilla Tag Steam build 26694026. It has been run against the real game with league-approved BepInEx plugins through start-up, but not yet through a full match with the headset on. After a Gorilla Tag update, players need a new release (or new signed league files) before they can launch.
 
 ## Privacy
 
@@ -58,6 +58,7 @@ Needs Windows 10/11, the .NET 8 Desktop Runtime, [SideQuest](https://sidequestvr
 2. Press **Install / Update** once. It puts the small Canopy Quest app on the headset.
 3. Enter the match code from your league and press **Start Pre-Check**.
 4. On a pass, give the pass code to your referee, press **Start Protection**, unplug and play.
+5. After the match, plug the headset back in and press **Finish Match** to get a match report (new in 1.1.0; not yet run on a real headset).
 
 It verifies that Gorilla Tag is the genuine build, that no unapproved apps are installed, that settings follow league policy (60 Hz, chromatic aberration and texture size up to 2560 are allowed) and that the system does not look modified. During the match the headset app keeps checking and logs connection stalls.
 
