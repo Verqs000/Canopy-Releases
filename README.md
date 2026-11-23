@@ -17,7 +17,7 @@ Download the latest build from **[Releases](../../releases)**.
 
 ## How to use
 
-1. Unzip the whole folder anywhere and run `Canopy\Canopy.exe`. Keep the `league` folder next to it.
+1. Unzip the whole folder anywhere you can write to (not Program Files) and run `Canopy\Canopy.exe`. Keep the `league` and `plugin` folders next to it.
 2. Press **Launch Gorilla Tag**. Canopy checks the game files, starts the game through Steam and attaches protection.
 3. Closing Canopy closes the game. The game cannot run under Canopy without protection.
 
@@ -31,7 +31,15 @@ This is a league-managed build: the protection policy and game baseline are sign
 - Locks the game process against outside memory access and closes untrusted programs' handles to it.
 - Verifies every library and managed assembly that loads into the game.
 - Checks the game's and SteamVR's code for hooks.
+- With the league's in-game reporter: reads movement values straight from game memory, and checks how fast the player
+  actually moves against the game's own speed cap, and where the in-game hands are against the real controllers.
+- Reads Windows' own record of which programs ran (more with administrator) to flag cheat tools and deleted programs.
 - Writes a tamper-evident security log and a session report for league administrators.
+
+## Updates
+
+Canopy updates itself when it starts. It downloads new versions and league files from this repository and installs them
+only if they are signed by the league. Offline, it starts the version you have.
 
 ## What it does not do
 
@@ -39,14 +47,15 @@ Canopy runs in user mode and has no kernel driver.
 
 - Kernel-level cheats are out of reach.
 - Tools run as administrator can only be inspected when Canopy is also run as administrator.
-- In-game movement values (jump speed, velocity limit, arm length and so on) are only seen when the league uses the optional in-game reporter plugin in the `plugin` folder. It reports them every 10 seconds as evidence; it does not lock them.
+- Movement values and motion are only seen when the league uses the in-game reporter plugin in the `plugin` folder. What it records comes from inside the game, so it is evidence, not proof; it does not lock anything.
+- Program history shows that a program ran, not what it did.
 - A session report shows that nothing was caught. It is not proof that a player is clean.
 
-Version 1.2.0 is made for Gorilla Tag Steam build 26694026. It has been run against the real game with league-approved BepInEx plugins through start-up, but not yet through a full match with the headset on. After a Gorilla Tag update, players need a new release (or new signed league files) before they can launch.
+Version 1.3.0 is made for Gorilla Tag Steam build 26694026. It has been run against the real game through start-up, but the motion checks have not yet been run through a match with the headset on. After a Gorilla Tag update, players need a new release (or new signed league files) before they can launch.
 
 ## Privacy
 
-Canopy inspects the game process, SteamVR, and programs that hold access to the game. It sends nothing over the network. Logs stay on your PC until you share them.
+Canopy inspects the game process, SteamVR, and programs that hold access to the game. The only network use is downloading updates and league files from this GitHub repository; nothing about you or your PC is sent. Program history is read on your PC and only flagged entries go into the session report. Logs stay on your PC until you share them.
 
 ## Canopy Quest
 
